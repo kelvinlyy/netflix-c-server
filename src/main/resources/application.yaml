@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:NETFLIX}
+    username: ${DB_USERNAME:netflix}
+    password: ${DB_PASSWORD:netflix}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+
+  codec:
+    max-in-memory-size: 10MB
+
+#  # need to add @EnableCaching to configuration if application.yaml config is used instead of CachingConfig file
+#  cache:
+#    cache-names: trendingTitles
+#    caffeine.spec: expireAfterAccess=6s
