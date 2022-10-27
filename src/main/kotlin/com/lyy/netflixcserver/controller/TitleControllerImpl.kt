@@ -50,6 +50,13 @@ class TitleControllerImpl(
         return titleService.getUpcomingMovies()
     }
 
+    @Cacheable("popularTitles")
+    @GetMapping("/popular/{mediaType}")
+    override fun getPopularTitles(@PathVariable mediaType: FetchTitleDto.Companion.MediaType): TitleResponse {
+        return titleService.getPopularTitles(mediaType)
+    }
+
+
     companion object {
         const val TITLE_BASE_URL = "/api/title"
     }

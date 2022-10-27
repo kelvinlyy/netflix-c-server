@@ -30,6 +30,7 @@ class CaffeineCacheConfig {
             "trendingTitles",
             "topRatedTitles",
             "upcomingTitles",
+            "popularTitles",
             "poster"
         )
         cacheManager.setCaffeine(caffeineCacheBuilder())

@@ -17,4 +17,6 @@ interface TitleService {
     fun getTrendingTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse
     fun getTopRatedTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse
     fun getUpcomingMovies(): TitleResponse
+    fun getPopularTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse
+
 }

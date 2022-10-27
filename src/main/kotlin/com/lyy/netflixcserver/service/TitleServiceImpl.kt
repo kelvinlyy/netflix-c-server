@@ -75,4 +75,17 @@ class TitleServiceImpl(
 
     }
 
+    override fun getPopularTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse {
+        println("Cache empty: sending API request...")
+
+        val fetchTitleResponse = webClient.get()
+            .uri("https://api.themoviedb.org/3/$mediaType/popular?api_key=$API_KEY")
+            .retrieve()
+            .bodyToMono(FetchTitleResponse::class.java)
+            .block() ?: throw Exception("wrong type")
+
+        return TitleResponse(fetchTitleResponse.results.map { titleMapper.fetchTitleDtoToTitleDto(it) })
+
+    }
+
 }
