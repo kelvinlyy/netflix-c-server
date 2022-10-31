@@ -3,7 +3,7 @@ File: GenreServiceImpl.kt
 Author: Kelvin LYY
 Summary: Implementation of Genre Service
 Description: Implementation of Genre Service
-            - fetch genres (movie and tv)
+            - fetch genres (movie and tv) (also executed after application starts)
 
 */
 
@@ -20,13 +20,11 @@ import javax.annotation.PostConstruct
 class GenreServiceImpl(
     private val API_KEY: String = System.getenv("api_key"),
     private val genreRepository: GenreRepository,
-    private val genreMapper: GenreMapper
+    private val genreMapper: GenreMapper,
+    private val webClient: WebClient
 ) : GenreService {
-
     @PostConstruct
     override fun fetchGenreList(): FetchGenreResponse {
-        val webClient = WebClient.create()
-
         val movieGenreList = webClient.get()
             .uri("https://api.themoviedb.org/3/genre/movie/list?api_key=$API_KEY")
             .retrieve()

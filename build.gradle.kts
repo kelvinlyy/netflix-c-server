@@ -40,6 +40,9 @@ dependencies {
 
 	implementation("org.mapstruct:mapstruct:$mapstructVersion")
 
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.12")
+
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 

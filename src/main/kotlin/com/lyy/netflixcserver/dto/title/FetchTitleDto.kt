@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonAlias
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class FetchTitleDto(
+    @JsonProperty("id")
+    val id: Long = 1L,
+
     @JsonProperty("title_name")
     @JsonAlias("name", "title", "original_name", "original_title")
     val titleName: String = "",

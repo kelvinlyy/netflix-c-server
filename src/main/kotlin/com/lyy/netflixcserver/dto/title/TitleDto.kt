@@ -9,6 +9,7 @@ package com.lyy.netflixcserver.dto.title
 
 
 data class TitleDto(
+    var id: Long = 1L,
     var titleName: String = "",
     var overview: String = "",
     var releaseDate: String = "",

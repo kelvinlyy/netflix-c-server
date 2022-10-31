@@ -2,8 +2,6 @@
 File: TitleController.kt
 Author: Kelvin LYY
 Summary: Interface of Title Controller
-Description: Interface of Title Controller
-            - get trending titles
 
 */
 
@@ -11,6 +9,7 @@ package com.lyy.netflixcserver.controller
 
 import com.lyy.netflixcserver.dto.title.FetchTitleDto
 import com.lyy.netflixcserver.dto.title.TitleResponse
+import com.lyy.netflixcserver.dto.title.TitleResponseWithAllPlaylists
 
 interface TitleController {
     fun getPoster(posterPath: String): ByteArray
@@ -18,4 +17,5 @@ interface TitleController {
     fun getTopRatedTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse
     fun getUpcomingMovies(): TitleResponse
     fun getPopularTitles(mediaType: FetchTitleDto.Companion.MediaType): TitleResponse
+    fun getAllPlaylists(): TitleResponseWithAllPlaylists
 }

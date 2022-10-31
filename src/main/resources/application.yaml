@@ -12,8 +12,11 @@ spring:
       ddl-auto: create
     open-in-view: false
 
-  codec:
-    max-in-memory-size: 10MB
+  cloud:
+    gateway:
+      httpclient:
+        pool:
+          maxIdleTime: 10000
 
 #  # need to add @EnableCaching to configuration if application.yaml config is used instead of CachingConfig file
 #  cache:

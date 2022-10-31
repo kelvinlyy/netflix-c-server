@@ -1,3 +1,13 @@
+/*
+File: WebClientConfig.kt
+Author: Kelvin LYY
+Summary: Configuration file for spring boot webClient
+Description: Configure for spring boot webClient
+            - maximum codec in memory size
+            - Bean for auto wiring
+
+*/
+
 package com.lyy.netflixcserver.config
 
 import org.springframework.context.annotation.Bean
